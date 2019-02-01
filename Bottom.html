@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://zy2071.com/Fun/WR/Bottom.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <style type="text/css">
+        .big-img {
+            display: block;
+            width: 240px;
+            margin: 0 auto;
+            margin-top:20px;
+        }
+
+        .searchbox {
+            height: 36px;
+            width: 30%;
+            margin: 0 auto;
+            font-family: '微软雅黑';
+        }
+
+
+        input {
+            border: none;
+            border-radius: 0;
+        }
+
+        .box {
+            display: inline-block;
+            box-sizing: border-box;
+            height: 36px;
+            width: calc(100% - 170px);
+            padding: 7px 5px;
+            /* border-top: 1px solid #b8b8b8;
+            border-left: 1px solid #b8b8b8;
+            border-bottom: 1px solid #b8b8b8; */
+            border-right: 0;
+            outline: none;
+            box-shadow: -2px 1px 6px rgba(32,33,36,.28);
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .btn {
+            float: right;
+            display: inline-block;
+            box-sizing: border-box;
+            height: 34px;
+            margin-right: 5px;
+            width: 70px;
+            padding: 0;
+            font-size: 16px;
+            background-color: #fd6853;
+            cursor: pointer;
+            color: white;
+            -webkit-appearance: none;
+            box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            user-select:none;
+            outline:none;
+        }
+
+        .bt-half {
+            width: 45px;
+        }
+
+        .bt-bd {
+            background-color: #3385ff;
+            margin-right: 0;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+            margin-top: 1px;
+        }
+        .bt-sg {
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+            margin-top: 1px;
+        }
+
+        .bt-gg {
+            height: 36px;
+            background: url('./Bottom_files/se.png') center no-repeat;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: -2px 1px 6px rgba(32,33,36,.28);
+            border-right: 1px solid #e9e9e9;
+        }
+
+        .main {
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        .img-box {
+            margin: 5% auto 20px;
+            height: 105px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="body">
+        <div class="img-box">
+            <img class="big-img" src="./Bottom_files/gg.png">
+        </div>
+        <div class="main">
+            <input autofocus="autofocus" class="box" id="keywords" type="text" name="word" size="30">
+            <input class="btn bt-half bt-sg" type="submit" value="So" onclick="doClick(2)">
+
+            <input class="btn bt-half bt-bd" type="submit" value="Bai" onclick="doClick(1)">
+            <input class="btn bt-gg" type="submit" value="" onclick="doClick(3)">
+        </div>
+    </div>
+
+
+    <script>
+        function doClick(ops) {
+            console.log(ops);
+            var keywords = document.getElementById("keywords").value;
+            var links;
+            // var links = (bool == true) ? "https://www.baidu.com/s?wd=" + keywords : "https://www.sogou.com/web?query=" + keywords;
+            switch (ops) {
+                case 1: links = "https://www.baidu.com/s?wd=" + keywords;break;
+                case 2: links = "https://www.sogou.com/web?query=" + keywords;break;
+                case 3: links = "http://gooo.tk/search?source=hp&ei=cYpKXITpILyw0PEPte-boA0&q="+keywords+"&btnK=Google+%E6%90%9C%E7%B4%A2&oq=" + keywords+"&gs_l=psy-ab.3..0l10.1959.3186..3510...0.0..1.539.1731.2-1j0j2j1......0....1..gws-wiz.....0.COrCK_qkCbc";break;
+                // case 3: links = "https://google.weihanli.xyz/search?q=" + keywords;
+            }
+            window.open(links);
+        }
+
+        document.onkeydown = function (e) {
+            var keyNum = window.event ? e.keyCode : e.which;
+            if (keyNum == 13) {
+                doClick(1);
+            }
+        }
+    </script>
+
+
+</body></html>
